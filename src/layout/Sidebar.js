@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../images/twitter.svg';
 import links from '../utils/links';
 import SidebarLink from '../components/SidebarLink';
+import UserProfileBox from '../components/UserProfileBox';
 
 function Sidebar() {
+  const [active, setActive] = useState('Home');
+  const handleMenuItem = (name) => {
+    setActive(name);
+  };
   return (
     <div className='flex flex-col justify-between px-2 py-2  w-72 min-h-screen '>
       <div>
@@ -15,7 +20,13 @@ function Sidebar() {
         <nav className='mb-4'>
           <ul>
             {links.map((link) => (
-              <SidebarLink key={link.name} title={link.name} Icon={link.icon} />
+              <SidebarLink
+                key={link.name}
+                title={link.name}
+                Icon={link.icon}
+                active={active}
+                onMenuItemClick={handleMenuItem}
+              />
             ))}
           </ul>
         </nav>
@@ -24,7 +35,7 @@ function Sidebar() {
         </button>
       </div>
       <div>
-        <h1>Username</h1>
+        <UserProfileBox />
       </div>
     </div>
   );
