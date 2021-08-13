@@ -1,7 +1,7 @@
-import Container from './components/Container';
-import Feed from './components/Feed';
-import Sidebar from './components/Sidebar';
-import Timeline from './components/Timeline';
+import Container from './layout/Container';
+import Sidebar from './layout/Sidebar';
+import Feed from './layout/Feed';
+import Timeline from './layout/Timeline';
 
 function App() {
   return (
