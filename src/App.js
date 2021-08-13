@@ -1,14 +1,14 @@
 import Container from './layout/Container';
 import Sidebar from './layout/Sidebar';
 import Feed from './layout/Feed';
-import Timeline from './layout/Timeline';
+import Widgets from './layout/Widgets';
 
 function App() {
   return (
     <Container>
       <Sidebar />
       <Feed />
-      <Timeline />
+      <Widgets />
     </Container>
   );
 }
